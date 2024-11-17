@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 }); // Initialisation d'AOS avec une durée d'animation de 1 seconde
   }, []);
-  const latestProducts = products.slice(-5);
+  const latestProducts = products.slice(-4);
 
   return (
     <div className="home">

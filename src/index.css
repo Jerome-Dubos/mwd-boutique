@@ -1,3 +1,16 @@
+:root {
+  --primary-color: #4a4a75;
+  --secondary-color: #9a9abc;
+  --accent-color: #ff8474;
+  --light-color: #f1f1f4;
+  --dark-text: #2e2e38;
+  --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s ease;
+  --border-radius: 15px;
+}
+
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -6,24 +19,54 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f1f1f4;
-  color: #2e2e38;
+  background-color: var(--light-color);
+  color: var(--dark-text);
 }
 
+/* Headings */
 h1, h2, h3 {
-  color: #4a4a75;
+  color: var(--primary-color);
 }
 
+/* Buttons */
 button {
-  background-color: #ff8474;
+  background-color: var(--accent-color);
   color: white;
   border: none;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--box-shadow);
 }
 
 button:hover {
-  background-color: #e06b61;
+  background-color: darken(var(--accent-color), 10%);
+  box-shadow: var(--hover-shadow);
 }
 
+/* Links */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+/* Inputs */
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(74, 74, 117, 0.5);
+}

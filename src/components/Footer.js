@@ -5,14 +5,14 @@ import '../assets/styles/Footer.css'
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="logo">
+    <footer className="footer-main">
+      <div className="footer-logo">
         <Link to="/">
           <img src={logo} alt="MWD Boutique" />
         </Link>
       </div>
       
-      <nav>
+      <nav className="footer-nav">
         <ul>
           <li><Link to="/about">À propos</Link></li>
           <li><Link to="/privacy">Politique de confidentialité</Link></li>
@@ -20,9 +20,9 @@ const Footer = () => {
         </ul>
       </nav>
 
-      <div className="social-links">
+      <div className="footer-social-links">
         <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-instagram"></i> {/* Utilisation d'icônes FontAwesome */}
+          <i className="fab fa-instagram"></i>
         </a>
         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-facebook-f"></i>
@@ -32,11 +32,11 @@ const Footer = () => {
         </a>
       </div>
 
-      <div className="contact-info">
+      <div className="footer-contact-info">
         <p>Contactez-nous : <a href="mailto:contact@mwd-boutique.com">contact@mwd-boutique.com</a></p>
       </div>
 
-      <div className="copyright">
+      <div className="footer-copyright">
         <p>&copy; {new Date().getFullYear()} MWD Boutique. Tous droits réservés.</p>
       </div>
     </footer>

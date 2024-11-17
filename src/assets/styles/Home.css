@@ -1,220 +1,227 @@
-/* Home - Page principale */
-.home {
-  padding: 0 20px;
-  margin-top: 20px;
-  margin-left: -10px;
-  margin-right: -10px;
+/* Home.css */
+
+/* Variables Globales */
+:root {
+  --primary-color: #4a4a75;
+  --secondary-color: #9a9abc;
+  --accent-color: #ff8474;
+  --light-color: #f1f1f4;
+  --dark-text: #2e2e38;
+  --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s ease;
+  --border-radius: 15px;
 }
 
-/* Home Presentation - Présentation de l'artiste */
+/* Conteneur global de la page */
+.home {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--light-color);
+  color: var(--dark-text);
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Animation globale pour les sections */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section : Présentation de la page d'accueil */
 .home-presentation {
-  background-color: white;
-  padding: 40px 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 40px;
-  animation: fadeInUp 1s ease-out;
+  margin-bottom: 80px;
+  max-width: 900px;
+  width: 100%;
+  padding: 40px;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 1s ease-out; /* Animation de fondu avec translation */
 }
 
 .home-presentation h1 {
+  color: var(--primary-color);
   font-size: 3rem;
-  color: #4a4a75;
+  font-weight: 600;
   margin-bottom: 20px;
 }
 
 .home-presentation p {
   font-size: 1.2rem;
-  color: #4a4a75;
-  margin-bottom: 20px;
-  line-height: 1.6;
+  line-height: 1.7;
+  color: var(--dark-text);
+  margin-bottom: 30px;
 }
 
-.home-presentation .shop-now-btn {
-  background-color: #4a4a75;
+.shop-now-btn {
+  background-color: var(--accent-color);
   color: white;
+  padding: 15px 30px;
+  border-radius: var(--border-radius);
   font-size: 1.2rem;
-  padding: 14px 35px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  display: inline-block;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.home-presentation .shop-now-btn:hover {
-  background-color: #3b3b5c;
-  transform: scale(1.05);
+/* Effet hover pour "shop-now-btn" dans home-presentation */
+.shop-now-btn:hover {
+  background-color: #e06b61;  /* Changement de couleur de fond */
+  transform: scale(1.1);  /* Augmentation légère de la taille */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);  /* Ombre plus marquée */
+  color: #2e2e38;
 }
 
-.home-presentation .shop-now-btn:active {
-  background-color: #2e2e38;
-  transform: scale(0.98);
-}
-
-.home-presentation .shop-now-btn:focus {
-  outline: none;
-}
-
-/* Featured Products - Produits en vedette */
+/* Section : Produits en vedette */
 .featured-products {
   text-align: center;
-  padding: 50px 20px;
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  animation: fadeInUp 1.5s ease-out;
+  width: 100%;
+  margin-bottom: 100px;
 }
 
 .featured-products h2 {
+  color: var(--primary-color);
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
 }
 
 .product-list {
-  display: flex;
-  justify-content: flex-start; /* Aligne les éléments à gauche */
-  gap: 20px;
-  margin-top: 30px;
-  padding: 0 10px;
-  overflow-x: auto; /* Ajoute un défilement horizontal si nécessaire */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Trois colonnes */
+  gap: 40px;
+  justify-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  grid-template-rows: auto auto; /* Deux lignes de produits */
 }
 
+/* Carte de produit : Assurer une taille uniforme */
 .product-card {
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
   width: 100%;
-  max-width: 300px;
-  margin: 15px;
+  max-width: 100%; /* Assure que la carte prend toute la largeur possible */
+  height: 100%; /* Permet à la hauteur de s'ajuster automatiquement */
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: auto;
-  box-sizing: border-box;
-}
-
-.product-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  object-fit: cover;
-}
-
-.product-card h3 {
-  font-size: 1.5rem;
-  color: #2e2e38;
-  margin-bottom: 10px;
-}
-
-.product-card p {
-  font-size: 1rem;
-  color: #4a4a75;
-  margin-bottom: 15px;
-  line-height: 1.5;
-}
-
-.product-card p strong {
-  font-size: 1.3rem;
-  color: #ff8474;
-}
-
-.product-card .btn {
-  background-color: #4a4a75;
-  color: white;
-  padding: 12px 24px;
-  text-decoration: none;
-  border-radius: 25px;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  display: inline-block;
-  margin-top: 10px;
-  width: 100%;
-}
-
-.product-card .btn:hover {
-  background-color: #3b3b5c;
-  transform: scale(1.05);
-}
-
-.product-card .btn:active {
-  background-color: #2e2e38;
-  transform: scale(0.98);
 }
 
 .product-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--hover-shadow);
 }
 
-/* For tablets and below (max-width: 1024px), adjust to column layout */
-@media (max-width: 1024px) {
-  /* On tablet or below, products will stack vertically */
-  .product-list {
-    flex-direction: column; /* Affichage en colonne */
-    gap: 20px; /* Espacement entre les cartes */
-    padding: 0;
-    align-items: center;
-  }
-
-  .product-card {
-    max-width: 90%; /* Les cartes prennent 90% de la largeur */
-    margin: 10px 0; /* Réduit l'espacement entre les cartes */
-  }
+.product-card img {
+  width: 100%;
+  height: 200px; /* Fixe la hauteur de l'image */
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-/* About Artist - À propos de l'artiste */
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+.product-info {
+  padding: 20px;
+  text-align: left;
+  flex-grow: 1; /* Permet de remplir l'espace restant */
+}
+
+.product-info h3 {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.product-info p {
+  font-size: 1rem;
+  color: var(--dark-text);
+  margin-bottom: 15px;
+}
+
+.product-info .price {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-top: auto; /* Assure que le prix est en bas de la carte */
+}
+
+/* Section : À propos de l'artiste */
 .about-artist {
-  background-color: #9a9abc;
-  color: white;
-  padding: 40px 20px;
   text-align: center;
-  margin-top: 40px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  animation: fadeInUp 2s ease-out;
+  width: 100%;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 60px 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 60px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideUp 1s ease-out; /* Animation de slide avec fondu */
 }
 
 .about-artist h2 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: white;
   margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 
 .about-artist p {
   font-size: 1.2rem;
-  margin-bottom: 20px;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 30px;
 }
 
 .about-btn {
-  background-color: #4a4a75;
+  background-color: var(--accent-color);
   color: white;
-  padding: 12px 30px;
+  padding: 12px 25px;
+  border-radius: var(--border-radius);
   text-decoration: none;
-  font-size: 1.2rem;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Effet hover pour "about-btn" dans about-artist */
 .about-btn:hover {
-  background-color: #3b3b5c;
-}
-
-/* Animation au défilement */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  background-color: #e06b61;  /* Changement de couleur de fond */
+  transform: scale(1.1);  /* Augmentation légère de la taille */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);  /* Ombre plus marquée */
+  color: #2e2e38;
 }

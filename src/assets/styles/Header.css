@@ -1,87 +1,190 @@
-/* Header */
-header {
+/* Conteneur du header avec une classe spécifique */
+header.header-main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #4a4a75; /* Couleur principale (violet sombre) */
-  padding: 20px;
-  color: white;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée pour plus de profondeur */
-  border-radius: 15px; /* Bords arrondis du header */
-  margin: 10px; /* Marge pour espacer le header du bord de la page */
-}
-
-header .logo img {
-  height: 120px; /* Taille du logo */
-  width: auto;
-  border-radius: 10px; /* Arrondi léger du logo */
-}
-
-header nav ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
-
-header nav ul li {
-  font-size: 1.1rem;
-}
-
-header nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 400;
-  padding: 8px 16px; /* Ajout de padding pour donner un effet de bouton aux liens */
-  border-radius: 20px; /* Arrondi des boutons de navigation */
-  transition: all 0.3s ease;
-}
-
-header nav ul li a:hover {
-  background-color: #ff8474; /* Effet corail au survol */
-  color: white; /* Assurer que le texte reste blanc même au survol */
-}
-
-/* Style du lien Panier avec le badge moderne */
-.cart-link {
+  padding: 20px 40px;
+  background-color: #4a4a75;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   position: relative;
 }
 
-.cart-badge {
+/* Logo */
+header.header-main .header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+header.header-main .header-logo img {
+  width: 160px;
+  height: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+header.header-main .header-logo img:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* Menu Hamburger */
+header.header-main .hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 25px;
+  width: 30px;
+  z-index: 10;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+header.header-main .hamburger .bar {
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  border-radius: 5px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Transformation croix */
+header.header-main .hamburger .bar.open:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+  background-color: #ff8474;
+}
+
+header.header-main .hamburger .bar.open:nth-child(2) {
+  transform: scale(0);
+}
+
+header.header-main .hamburger .bar.open:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+  background-color: #ff8474;
+}
+
+/* Navigation */
+header.header-main nav.header-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+}
+
+header.header-main nav.header-nav ul {
+  display: flex;
+  gap: 30px;
+  list-style-type: none;
+  padding: 0;
+}
+
+header.header-main nav.header-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header.header-main nav.header-nav a:hover {
+  color: #ff8474;
+  transform: translateY(-4px);
+}
+
+/* Badge du panier */
+header.header-main nav.header-nav .cart-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+header.header-main nav.header-nav .cart-badge {
   position: absolute;
-  top: -30px; /* Position légèrement modifiée pour plus d'alignement */
-  right: -10px; /* Position légèrement modifiée pour plus d'alignement */
-  background-color: #ff8474; /* Couleur du badge */
+  top: -25px;
+  right: -25px;
+  background-color: #ff8474;
   color: white;
   border-radius: 50%;
-  padding: 8px 12px; /* Augmenter un peu l'espace pour un effet plus ample */
-  font-size: 1.1rem;
-  font-weight: bold;
-  display: inline-block;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre subtile pour plus de profondeur */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  height: 25px;
+  width: 25px;
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-.cart-badge:hover {
-  transform: scale(1.2); /* Effet de zoom au survol */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Augmenter l'ombre au survol */
+header.header-main nav.header-nav .cart-badge:hover {
+  transform: scale(1.3);
+  background-color: #ff5f5f;
 }
 
-/* Responsivité pour les petits écrans */
-@media (max-width: 768px) {
-  header {
+/* Mobile (Menu Hamburger) */
+@media screen and (max-width: 1024px) {
+  header.header-main {
+    justify-content: space-between;
+  }
+
+  header.header-main .hamburger {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+  }
+
+  header.header-main nav.header-nav {
+    display: none;
+    /* Cacher la nav par défaut */
+    position: absolute;
+    top: 0;
+    right: -80px;
+    background-color: #4a4a75;
+    border-radius: 8px;
+    padding: 20px;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 15px;
-    border-radius: 10px; /* Réduire l'arrondi pour les petits écrans */
+    gap: 20px;
+    width: 250px;
+    transform: scale(0.8) translateX(100%);
+    /* Menu en dehors, réduit */
+    opacity: 0;
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.5s ease-out;
+    /* Animation fluide */
+    box-shadow: none;
   }
 
-  header .logo img {
-    height: 50px; /* Réduire légèrement la taille du logo sur mobile */
+  header.header-main nav.header-nav.open {
+    display: flex;
+    transform: scale(1) translateX(0);
+    /* Menu à taille normale, glissant de l'icône */
+    opacity: 1;
   }
 
-  header nav ul {
+  header.header-main nav.header-nav ul {
     flex-direction: column;
     gap: 15px;
+    width: 100%;
     padding-left: 0;
+  }
+
+  header.header-main nav.header-nav a {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    text-transform: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  header.header-main nav.header-nav a:hover {
+    color: #ff8474;
+    transform: translateY(-2px);
+  }
+
+  header.header-main nav.header-nav .cart-badge {
+    top: -8px;
+    right: 120px;
+    transform: scale(1.1);
   }
 }
