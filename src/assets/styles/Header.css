@@ -1,0 +1,87 @@
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4a4a75; /* Couleur principale (violet sombre) */
+  padding: 20px;
+  color: white;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée pour plus de profondeur */
+  border-radius: 15px; /* Bords arrondis du header */
+  margin: 10px; /* Marge pour espacer le header du bord de la page */
+}
+
+header .logo img {
+  height: 120px; /* Taille du logo */
+  width: auto;
+  border-radius: 10px; /* Arrondi léger du logo */
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+header nav ul li {
+  font-size: 1.1rem;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  padding: 8px 16px; /* Ajout de padding pour donner un effet de bouton aux liens */
+  border-radius: 20px; /* Arrondi des boutons de navigation */
+  transition: all 0.3s ease;
+}
+
+header nav ul li a:hover {
+  background-color: #ff8474; /* Effet corail au survol */
+  color: white; /* Assurer que le texte reste blanc même au survol */
+}
+
+/* Style du lien Panier avec le badge moderne */
+.cart-link {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -30px; /* Position légèrement modifiée pour plus d'alignement */
+  right: -10px; /* Position légèrement modifiée pour plus d'alignement */
+  background-color: #ff8474; /* Couleur du badge */
+  color: white;
+  border-radius: 50%;
+  padding: 8px 12px; /* Augmenter un peu l'espace pour un effet plus ample */
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre subtile pour plus de profondeur */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cart-badge:hover {
+  transform: scale(1.2); /* Effet de zoom au survol */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Augmenter l'ombre au survol */
+}
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+    border-radius: 10px; /* Réduire l'arrondi pour les petits écrans */
+  }
+
+  header .logo img {
+    height: 50px; /* Réduire légèrement la taille du logo sur mobile */
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 15px;
+    padding-left: 0;
+  }
+}

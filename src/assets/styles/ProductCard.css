@@ -1,0 +1,94 @@
+/* ProductCard - Carte de produit */
+.product-card {
+  background-color: white;
+  border-radius: 15px; /* Bords arrondis */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition pour l'agrandissement et l'ombre */
+  width: 100%; /* Pour qu'elle prenne toute la largeur disponible */
+  max-width: 300px; /* Largeur maximale pour garder un aspect cohérent */
+  margin: 15px; /* Espacement entre les cartes */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: 100%; /* On utilise toute la hauteur disponible dans la carte */
+  min-height: 450px; /* Hauteur minimale pour éviter que la carte ne devienne trop petite */
+}
+
+/* Assurer que les éléments sont au même niveau */
+.product-card > * {
+  flex-shrink: 0; /* Empêche les éléments de rétrécir */
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Bordure arrondie de l'image */
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  font-size: 1.5rem;
+  color: #2e2e38; /* Texte principal en gris foncé */
+  margin-bottom: 10px;
+  flex-grow: 0; /* Empêche l'élément de grandir */
+}
+
+.product-card p {
+  font-size: 1rem;
+  color: #4a4a75; /* Violet sombre */
+  margin-bottom: 10px;
+  line-height: 1.5;
+  flex-grow: 0; /* Empêche l'élément de grandir */
+}
+
+.product-card p strong {
+  font-size: 1.3rem;
+  color: #ff8474; /* Corail pour le prix */
+}
+
+.product-card .btn {
+  background-color: #4a4a75; /* Violet sombre */
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 25px; /* Bords arrondis */
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transition pour l'effet de survol */
+  display: inline-block;
+  margin-top: auto; /* Place le bouton toujours en bas */
+  width: 100%; /* Le bouton prend la largeur complète de la carte */
+  box-sizing: border-box;
+}
+
+.product-card .btn:hover {
+  background-color: #3b3b5c; /* Teinte plus sombre du violet */
+  transform: scale(1.05); /* Légère augmentation de taille au survol */
+}
+
+.product-card .btn:active {
+  background-color: #2e2e38; /* Gris foncé lorsqu'on clique */
+  transform: scale(0.98); /* Réduction au clic */
+}
+
+.product-card:hover {
+  transform: translateY(-10px); /* Effet de déplacement vers le haut au survol */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Ombre renforcée pour un effet de profondeur */
+}
+
+/* Assurer que la carte soit toujours de taille cohérente, même avec peu de contenu */
+.product-card .btn {
+  margin-top: auto; /* Fait en sorte que le bouton soit toujours en bas de la carte */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-card {
+    max-width: 90%; /* La carte prend 90% de la largeur sur les petits écrans */
+    min-height: 450px; /* Garder la hauteur minimale sur les petits écrans */
+  }
+}

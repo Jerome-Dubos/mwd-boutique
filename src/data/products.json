@@ -1,0 +1,57 @@
+[
+    {
+      "id": 1,
+      "title": "Le Voyage de l'Âme",
+      "artist": "Artiste Indépendant",
+      "price": 250,
+      "image": "/images/Tableaux/Le Voyage de l'Âme.jpg", 
+      "description": "Un tableau abstrait qui explore les profondeurs de l'âme humaine et ses émotions.",
+      "category": "Abstrait"
+    },
+    {
+      "id": 2,
+      "title": "Horizon Lumineux",
+      "artist": "Artiste Indépendant",
+      "price": 300,
+      "image": "/images/Tableaux/Horizon Lumineux.jpg", 
+      "description": "Des couleurs vibrantes qui symbolisent l'espoir et la lumière au bout du tunnel.",
+      "category": "Paysage"
+    },
+    {
+      "id": 3,
+      "title": "Rêverie Naturelle",
+      "artist": "Artiste Indépendant",
+      "price": 180,
+      "image": "/images/Tableaux/Rêverie Naturelle.jpg", 
+      "description": "Une scène paisible inspirée de la nature, capturant la tranquillité et la beauté des paysages.",
+      "category": "Nature"
+    },
+    {
+      "id": 4,
+      "title": "Eclat de Vie",
+      "artist": "Artiste Indépendant",
+      "price": 320,
+      "image": "/images/Tableaux/Eclat de Vie.jpg", 
+      "description": "Un portrait vibrant représentant la joie et la vitalité de l'existence.",
+      "category": "Portrait"
+    },
+    {
+      "id": 5,
+      "title": "Mélancolie Nocturne",
+      "artist": "Artiste Indépendant",
+      "price": 220,
+      "image": "/images/Tableaux/Mélancolie Nocturne.jpg", 
+      "description": "Une œuvre qui capte la beauté de la nuit, entre ombres et lumières.",
+      "category": "Abstrait"
+    },
+    {
+      "id": 6,
+      "title": "Légende Marine",
+      "artist": "Artiste Indépendant",
+      "price": 280,
+      "image": "/images/Tableaux/Légende Marine.jpg", 
+      "description": "Un paysage marin inspiré des mystères et des légendes qui entourent la mer.",
+      "category": "Paysage"
+    }
+  ]
+  

@@ -1,0 +1,163 @@
+/* Conteneur principal pour la page produit */
+.product-page {
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.5s ease;
+}
+
+/* Détails du produit */
+.product-details {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Style de l'image produit */
+.product-image {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Effet d'agrandissement de l'image */
+.product-image:hover {
+  transform: scale(1.05);
+}
+
+/* Titre du produit */
+.product-details h1 {
+  font-size: 36px;
+  color: #2e2e38;
+  margin: 15px 0;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+/* Transition de la couleur du titre au survol */
+.product-details:hover h1 {
+  color: #ff8474;
+}
+
+/* Description du produit */
+.product-details p {
+  font-size: 16px;
+  color: #757575;
+  margin: 10px 0;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+/* Catégorie et prix du produit */
+.product-details .category,
+.product-details .price {
+  font-size: 18px;
+  color: #ff8474;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Style du prix */
+.product-details strong {
+  font-size: 24px;
+  color: #ff8474;
+  margin-top: 10px;
+  display: block;
+}
+
+/* Bouton d'ajout au panier */
+.product-details .btn {
+  background-color: #ff8474;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 25px;
+  box-shadow: 0 5px 15px rgba(255, 132, 116, 0.3);
+}
+
+/* Effet au survol du bouton */
+.product-details .btn:hover {
+  background-color: #ff4e3a;
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(255, 132, 116, 0.4);
+}
+
+/* Section de la description du produit */
+.product-description {
+  font-size: 16px;
+  color: #757575;
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+/* Bouton désactivé (si le produit est déjà dans le panier) */
+.product-details .btn:disabled {
+  background-color: #ccc; /* Couleur de fond grise lorsque le bouton est désactivé */
+  cursor: not-allowed; /* Curseur pour indiquer que le bouton est désactivé */
+  transform: none; /* Pas de changement de taille sur hover */
+  box-shadow: none; /* Pas d'ombre portée */
+}
+
+/* Désactivation de l'effet hover sur un bouton désactivé */
+.product-details .btn:disabled:hover {
+  background-color: #ccc; /* Maintien la couleur grise pour le hover */
+  transform: none; /* Pas d'effet d'agrandissement */
+}
+
+/* Media queries pour rendre la page responsive */
+@media (max-width: 1024px) {
+  .product-details {
+    padding: 20px;
+  }
+
+  .product-details h1 {
+    font-size: 30px;
+  }
+
+  .product-details p {
+    font-size: 14px;
+  }
+
+  .product-details .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .product-image {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-details {
+    max-width: 90%;
+  }
+
+  .product-details h1 {
+    font-size: 28px;
+  }
+
+  .product-details p {
+    font-size: 15px;
+  }
+
+  .product-details .btn {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+}

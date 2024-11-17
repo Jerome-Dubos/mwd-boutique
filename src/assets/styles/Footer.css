@@ -1,0 +1,107 @@
+/* Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #4a4a75; /* Couleur principale (violet sombre) */
+    padding: 40px 20px; /* Augmenter le padding pour un look plus aéré */
+    color: white;
+    box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.2); /* Ombre accentuée vers le bas */
+    border-radius: 15px; /* Bords arrondis similaires au header */
+    margin: 20px 10px 10px 10px;
+  }
+  
+  footer .logo img {
+    height: 100px; /* Taille du logo dans le footer */
+    width: auto;
+    border-radius: 10px;
+    margin-bottom: 20px; /* Ajouter un espace sous le logo */
+  }
+  
+  footer .social-links {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px; /* Espacement entre les icônes sociales et le reste */
+  }
+  
+  footer .social-links a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  footer .social-links a:hover {
+    color: #ff8474; /* Couleur corail au survol */
+  }
+  
+  footer nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Espacement plus grand entre les éléments */
+    margin-bottom: 30px; /* Espacement entre la navigation et le reste */
+  }
+  
+  footer nav ul li {
+    font-size: 1.1rem; /* Augmenter légèrement la taille des liens */
+  }
+  
+  footer nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+  }
+  
+  footer nav ul li a:hover {
+    color: #ff8474; /* Effet corail au survol */
+  }
+  
+  footer .contact-info {
+    font-size: 1rem;
+    margin-bottom: 20px; /* Espacement entre les informations de contact et le copyright */
+  }
+  
+  footer .contact-info a {
+    color: #ff8474; /* Couleur corail pour l'email */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  footer .contact-info a:hover {
+    color: white;
+  }
+  
+  footer .copyright {
+    font-size: 0.9rem;
+    color: #b5b5b5; /* Gris clair pour le texte de copyright */
+    text-align: center;
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    footer {
+      padding: 20px;
+    }
+  
+    footer .social-links {
+      margin-bottom: 20px; /* Espacer légèrement les icônes sociales pour mobile */
+    }
+  
+    footer nav ul {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    footer .contact-info {
+      text-align: center;
+      margin-bottom: 15px; /* Réduire l'espacement mobile */
+    }
+  
+    footer .copyright {
+      margin-top: 20px;
+    }
+  }
+  

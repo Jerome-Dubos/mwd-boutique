@@ -1,0 +1,232 @@
+/* Styles principaux de la boutique */
+.shop {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    margin-top: 20px;
+    gap: 30px;
+    background-color: #f9f9f9;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Styles des filtres */
+.filters {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #f1f1f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-filters {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-btn,
+.pagination-btn,
+.reset-filters {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 16px;
+}
+
+.filter-btn {
+    background-color: #9a9abc;
+    color: #2e2e38;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: #ff8474;
+    color: white;
+}
+
+.reset-filters {
+    background-color: #ff8474;
+    color: white;
+    align-self: flex-start;
+}
+
+.reset-filters:hover {
+    background-color: #ff4e3a;
+}
+
+.price-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.price-filter label,
+.price-filter span {
+    font-size: 16px;
+    color: #2e2e38;
+}
+
+.price-slider {
+    width: 100%;
+    height: 5px;
+    background-color: #d1d1d6;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.price-slider::-webkit-slider-thumb,
+.price-slider::-moz-range-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #ff8474;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.price-slider::-webkit-slider-thumb:hover,
+.price-slider::-moz-range-thumb:hover {
+    background-color: #ff4e3a;
+}
+
+/* Styles des produits */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 10px 0;
+    justify-content: flex-start;
+}
+
+.product-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+a {
+    text-decoration: none;
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    color: #2e2e38;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #9a9abc;
+    margin-bottom: 10px;
+}
+
+.product-card strong {
+    font-size: 16px;
+    color: #ff8474;
+}
+
+/* Styles du bouton 'Ajouter au panier' */
+.product-card .btn {
+    background-color: #ff8474;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.product-card .btn:hover {
+    background-color: #ff4e3a;
+    transform: scale(1.05);
+}
+
+/* Bouton désactivé (si le produit est déjà dans le panier) */
+.product-card .btn.disabled {
+    background-color: #d1d1d6; /* Gris clair pour indiquer que le bouton est désactivé */
+    cursor: not-allowed; /* Curseur en forme de croix pour signifier la désactivation */
+    transform: none; /* Pas de changement de taille lors du hover */
+    box-shadow: none; /* Pas d'ombre */
+}
+
+/* Désactivation de l'effet hover sur un bouton désactivé */
+.product-card .btn.disabled:hover {
+    background-color: #d1d1d6; /* Garder le gris pour le hover */
+    transform: none; /* Pas d'effet sur le hover */
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.pagination-btn {
+    background-color: #9a9abc;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.pagination-btn:hover,
+.pagination-btn.active {
+    background-color: #ff8474;
+    transform: scale(1.1);
+}
+
+.pagination-btn:disabled {
+    background-color: #d1d1d6;
+    cursor: not-allowed;
+}
+
+/* Styles responsive */
+@media (max-width: 1024px) {
+    .filters {
+        padding: 15px;
+    }
+
+    .category-filters {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .pagination-btn {
+        padding: 8px 12px;
+        /* Taille des boutons plus petits */
+    }
+}
+
+@media (max-width: 480px) {
+    .pagination-btn {
+        padding: 6px 10px;
+        /* Taille des boutons encore plus petits */
+    }
+}
