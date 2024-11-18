@@ -1,0 +1,113 @@
+/* About Page */
+.about-page {
+    padding: 40px 20px;
+    background-color: var(--light-color);
+  }
+  
+  /* Présentation de l'artiste */
+  .about-artist {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 50px;
+  }
+  
+  .about-artist h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-artist p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    transition: background-color 0.3s ease;
+  }
+  
+  .about-btn:hover {
+    background-color: #3b3b5c;
+  }
+  
+  /* Galerie des Tableaux */
+  .gallery {
+    text-align: center;
+  }
+  
+  .gallery h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--dark-text);
+  }
+  
+  .gallery-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .gallery-item {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    object-fit: cover;
+  }
+  
+  .gallery-item h3 {
+    font-size: 1.5rem;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+  }
+  
+  .gallery-item .status {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  .gallery-item .available {
+    color: var(--accent-color);
+  }
+  
+  .gallery-item .sold {
+    color: #bdbdbd;
+  }
+  
+  .gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--hover-shadow);
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 1024px) {
+    .gallery-list {
+      gap: 20px;
+    }
+    
+    .gallery-item {
+      max-width: 90%;
+    }
+  }
+  

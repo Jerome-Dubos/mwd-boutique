@@ -1,16 +1,36 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
-import products from '../data/products.json'
+import Loading from '../components/Loading';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../assets/styles/Home.css';
 
 const Home = () => {
+  const [loading, setLoading] = useState(true);
+  const [products, setProducts] = useState([]);
+
   useEffect(() => {
     AOS.init({ duration: 1000 });
+
+    // Fetch product data from the public folder
+    fetch('/data/products.json')
+      .then((response) => response.json())
+      .then((data) => {
+        setProducts(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error loading products data:', error);
+        setLoading(false);
+      });
   }, []);
+
   const latestProducts = products.slice(-4);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="home">

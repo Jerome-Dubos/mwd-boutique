@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import productsData from '../data/products.json';
+import Loading from '../components/Loading'; // Import Loading component
 import '../assets/styles/Shop.css';
 
 const Shop = () => {
@@ -10,15 +10,31 @@ const Shop = () => {
   const [filters, setFilters] = useState({ category: '', price: [0, 2500] });
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 6;
+  const [productsData, setProductsData] = useState([]);
+  const [loading, setLoading] = useState(true); // State to manage loading
+
+  useEffect(() => {
+    // Fetch product data from the public folder
+    fetch('/data/products.json')
+      .then((response) => response.json())
+      .then((data) => {
+        setProductsData(data);
+        setLoading(false); // Set loading to false after data is fetched
+      })
+      .catch((error) => {
+        console.error('Error loading products data:', error);
+        setLoading(false); // Handle errors and stop loading
+      });
+  }, []);
 
   const handleFilterChange = (e, category) => {
     if (category) {
-      setFilters(prevState => ({
+      setFilters((prevState) => ({
         ...prevState,
         category: prevState.category === category ? '' : category,
       }));
     } else {
-      setFilters(prevState => ({
+      setFilters((prevState) => ({
         ...prevState,
         price: [prevState.price[0], e.target.value],
       }));
@@ -29,12 +45,12 @@ const Shop = () => {
     setFilters({ category: '', price: [0, 2500] });
   };
 
-  // Fonction pour rediriger vers la page produit
+  // Function to navigate to the product page
   const handleProductClick = (productId) => {
     navigate(`/product/${productId}`);
   };
 
-  // Filtrage des produits
+  // Filter products based on selected category and price range
   const filteredProducts = productsData.filter((product) => {
     const [minPrice, maxPrice] = filters.price;
     const inPriceRange = product.price >= minPrice && product.price <= maxPrice;
@@ -42,13 +58,18 @@ const Shop = () => {
     return inPriceRange && inCategory;
   });
 
-  // Pagination
+  // Pagination logic
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  // If loading, show the Loading component
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="shop">
@@ -95,8 +116,8 @@ const Shop = () => {
       </div>
 
       <div className="product-list">
-        {currentProducts.map(product => {
-          const isInCart = cartItems.some(item => item.id === product.id);
+        {currentProducts.map((product) => {
+          const isInCart = cartItems.some((item) => item.id === product.id);
           return (
             <div
               className="product-card"
