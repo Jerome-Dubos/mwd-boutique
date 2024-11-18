@@ -124,6 +124,7 @@
 .product-card:hover {
   transform: translateY(-10px);
   box-shadow: var(--hover-shadow);
+  cursor: default;
 }
 
 .product-card img {

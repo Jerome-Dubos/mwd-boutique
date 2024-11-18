@@ -1,113 +1,219 @@
-/* About Page */
 .about-page {
-    padding: 40px 20px;
-    background-color: var(--light-color);
-  }
-  
-  /* Présentation de l'artiste */
-  .about-artist {
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    margin-bottom: 50px;
-  }
-  
-  .about-artist h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .about-artist p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  
-  .about-btn {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 12px 30px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    border-radius: 20px;
-    box-shadow: var(--box-shadow);
-    transition: background-color 0.3s ease;
-  }
-  
-  .about-btn:hover {
-    background-color: #3b3b5c;
-  }
-  
-  /* Galerie des Tableaux */
-  .gallery {
-    text-align: center;
-  }
-  
-  .gallery h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: var(--dark-text);
-  }
-  
-  .gallery-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-  }
-  
-  .gallery-item {
-    background-color: var(--light-color);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
+  padding: 40px;
+}
+
+.artist-introduction {
+  margin-bottom: 40px;
+}
+
+.artist-introduction h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.artist-details {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.artist-photo {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.artist-description p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--dark-text);
+}
+
+.gallery {
+  margin-bottom: 40px;
+}
+
+.gallery h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.gallery-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.gallery-item:hover {
+  box-shadow: var(--hover-shadow);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.info {
+  padding: 15px;
+  background-color: var(--light-color);
+  text-align: center;
+}
+
+.info h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.status {
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.status.disponible {
+  color: green;
+}
+
+.status.vendu {
+  color: red;
+}
+
+.contact-form {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: var(--box-shadow);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-form h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  font-size: 1rem;
+  color: var(--dark-text);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: var(--border-radius);
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.contact-form button {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 12px 25px;
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.contact-form button:hover {
+  background-color: darken(var(--accent-color), 10%);
+}
+
+.contact-form button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.contact-form p {
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+@media (max-width: 1024px) {
+  .about-page {
     padding: 20px;
-    max-width: 300px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  
-  .gallery-item img {
+
+  .artist-details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .artist-photo {
     width: 100%;
     height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    object-fit: cover;
+  }
+
+  .gallery-list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .contact-form {
+    padding: 15px;
+    max-width: 100%;
   }
   
-  .gallery-item h3 {
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+  }
+
+  .contact-form button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    padding: 15px;
+  }
+
+  .artist-introduction h2 {
     font-size: 1.5rem;
-    color: var(--dark-text);
-    margin-bottom: 10px;
   }
-  
-  .gallery-item .status {
-    font-size: 1.1rem;
-    font-weight: bold;
+
+  .artist-description p {
+    font-size: 1rem;
   }
-  
-  .gallery-item .available {
-    color: var(--accent-color);
+
+  .contact-form h2 {
+    font-size: 1.5rem;
   }
-  
-  .gallery-item .sold {
-    color: #bdbdbd;
+
+  .contact-form label {
+    font-size: 0.9rem;
   }
-  
-  .gallery-item:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--hover-shadow);
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
   }
-  
-  /* Responsiveness */
-  @media (max-width: 1024px) {
-    .gallery-list {
-      gap: 20px;
-    }
-    
-    .gallery-item {
-      max-width: 90%;
-    }
+
+  .contact-form button {
+    font-size: 1rem;
+    padding: 12px 20px;
   }
-  
+}

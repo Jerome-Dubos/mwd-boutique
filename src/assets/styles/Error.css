@@ -1,0 +1,46 @@
+.error-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: var(--light-color);
+    padding: 20px;
+  }
+  
+  .error-page h1 {
+    font-size: 5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+  }
+  
+  .error-page h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+  }
+  
+  .error-page p {
+    font-size: 1.2rem;
+    color: var(--dark-text);
+    margin-bottom: 30px;
+    max-width: 600px;
+  }
+  
+  .error-page button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 15px 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: var(--transition);
+  }
+  
+  .error-page button:hover {
+    background-color: #e06f6f;
+    box-shadow: var(--hover-shadow);
+  }
+  

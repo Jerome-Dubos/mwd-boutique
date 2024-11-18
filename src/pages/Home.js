@@ -26,7 +26,9 @@ const Home = () => {
       });
   }, []);
 
-  const latestProducts = products.slice(-4);
+  // Filtrer les produits pour exclure ceux dont le statut est "vendu"
+  const featuredProducts = products.filter((product) => product.status !== 'vendu');
+  const latestProducts = featuredProducts.slice(-4);  // Sélectionner les 4 derniers produits filtrés
 
   if (loading) {
     return <Loading />;

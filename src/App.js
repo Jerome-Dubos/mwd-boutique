@@ -8,6 +8,9 @@ import Shop from './pages/Shop';
 import ProductPage from './pages/ProductPage';
 import CartPage from './pages/CartPage';
 import About from './pages/About';
+import Error from './pages/Error';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsAndConditions from './pages/Terms';
 
 const App = () => {
   return (
@@ -21,6 +24,9 @@ const App = () => {
             <Route path="/product/:productId" element={<ProductPage />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/about" element={<About />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsAndConditions />} />
+            <Route path="*" element={<Error />} />
           </Routes>
         </main>
         <Footer />

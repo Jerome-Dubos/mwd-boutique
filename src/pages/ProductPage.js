@@ -55,13 +55,18 @@ const ProductPage = () => {
         <p>{product.category}</p>
         <p>{product.description}</p>
         <strong>{product.price}€</strong>
+        
+        {/* Affichage du statut de l'œuvre */}
+        <p className={`status ${product.status === 'vendu' ? 'sold' : 'available'}`}>
+          {product.status === 'vendu' ? 'Vendu' : 'Disponible'}
+        </p>
 
         <button
           className="btn"
           onClick={handleAddToCart}
-          disabled={productInCart}
+          disabled={productInCart || product.status === 'vendu'}
         >
-          {productInCart ? "Déjà dans le panier" : "Ajouter au panier"}
+          {productInCart || product.status === 'vendu' ? "Déjà dans le panier" : "Ajouter au panier"}
         </button>
       </div>
     </div>

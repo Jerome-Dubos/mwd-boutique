@@ -1,0 +1,114 @@
+/* Style pour la page de politique de confidentialité */
+.privacy-policy-container {
+    background-color: var(--light-color);
+    color: var(--dark-text);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    max-width: 900px;
+    margin: 40px auto;
+  }
+  
+  h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  
+  a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    transition: var(--transition);
+  }
+  
+  a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+  }
+  
+  /* Style pour les sections */
+  section {
+    margin-bottom: 30px;
+  }
+  
+  section:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Tableaux ou éléments semblables, s'il y en avait */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table th, table td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: var(--secondary-color);
+    color: var(--dark-text);
+  }
+  
+  table td {
+    background-color: #fff;
+  }
+  
+  /* Buttons spécifiques à la politique de confidentialité (par exemple, pour fermer ou accepter les cookies) */
+  button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--box-shadow);
+    font-size: 1rem;
+  }
+  
+  button:hover {
+    background-color: darken(var(--accent-color), 10%);
+    box-shadow: var(--hover-shadow);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .privacy-policy-container {
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    h2 {
+      font-size: 1.6rem;
+    }
+  
+    p, ul {
+      font-size: 0.95rem;
+    }
+  }
+  

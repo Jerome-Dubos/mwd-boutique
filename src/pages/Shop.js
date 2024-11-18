@@ -50,12 +50,13 @@ const Shop = () => {
     navigate(`/product/${productId}`);
   };
 
-  // Filter products based on selected category and price range
+  // Filter products based on selected category, price range, and exclude sold items
   const filteredProducts = productsData.filter((product) => {
     const [minPrice, maxPrice] = filters.price;
     const inPriceRange = product.price >= minPrice && product.price <= maxPrice;
     const inCategory = filters.category ? product.category === filters.category : true;
-    return inPriceRange && inCategory;
+    const isAvailable = product.status !== 'vendu'; // Exclude products that are sold
+    return inPriceRange && inCategory && isAvailable;
   });
 
   // Pagination logic
