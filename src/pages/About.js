@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'; // Import de Link
 import '../assets/styles/About.css';
 import Loading from '../components/Loading';
 import ContactForm from '../components/ContactForm';
@@ -52,7 +53,9 @@ const About = () => {
             items.length > 0 ? (
               items.map((item, index) => (
                 <div className="gallery-item" key={index}>
-                  <img src={item.image} alt={item.name} />
+                  <Link to={`/product/${item.id}`}> {/* Ajout du lien autour de l'image */}
+                    <img src={item.image} alt={item.name} />
+                  </Link>
                   <div className="info">
                     <h3>{item.name}</h3>
                     <p className={`status ${item.status}`}>

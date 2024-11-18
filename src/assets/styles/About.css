@@ -1,20 +1,50 @@
+:root {
+  --primary-color: #4a4a75; /* Couleur principale */
+  --secondary-color: #9a9abc; /* Couleur secondaire */
+  --accent-color: #ff8474; /* Couleur d'accent */
+  --light-color: #f1f1f4; /* Couleur claire */
+  --dark-text: #2e2e38; /* Couleur de texte foncé */
+  --border-radius: 8px; /* Rayon de bordure */
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre de boîte */
+  --hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Ombre au survol */
+  --transition: 0.3s ease-in-out; /* Transition douce */
+  --fade-in: 0.6s ease-out; /* Effet de fade-in */
+  --slide-in: 0.8s ease-out; /* Effet de slide-in */
+  --scale-in: 0.6s ease-out; /* Effet de scale-in */
+}
+
 .about-page {
   padding: 40px;
+  opacity: 0;
+  transform: translateY(20px); /* Décalage initial vers le bas */
+  animation: slideInUp 1s forwards;
 }
 
 .artist-introduction {
   margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px); /* Décalage vers le bas */
+  animation: slideInUp 1s forwards;
+  animation-delay: 0.2s;
 }
 
 .artist-introduction h2 {
   color: var(--primary-color);
   margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideInUp 1s forwards;
+  animation-delay: 0.3s;
 }
 
 .artist-details {
   display: flex;
   align-items: center;
   gap: 20px;
+  opacity: 0;
+  transform: translateX(-20px); /* Décalage vers la gauche */
+  animation: slideInRight 1s forwards;
+  animation-delay: 0.4s;
 }
 
 .artist-photo {
@@ -23,21 +53,37 @@
   object-fit: cover;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
+  opacity: 0;
+  transform: scale(0.9); /* Effet de réduction */
+  animation: scaleIn 1s forwards;
+  animation-delay: 0.5s;
 }
 
 .artist-description p {
   font-size: 1.2rem;
   line-height: 1.6;
   color: var(--dark-text);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideInUp 1s forwards;
+  animation-delay: 0.6s;
 }
 
 .gallery {
   margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideInUp 1s forwards;
+  animation-delay: 0.7s;
 }
 
 .gallery h2 {
   color: var(--primary-color);
   margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideInUp 1s forwards;
+  animation-delay: 0.8s;
 }
 
 .gallery-list {
@@ -52,6 +98,11 @@
   box-shadow: var(--box-shadow);
   overflow: hidden;
   transition: var(--transition);
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px); /* Décalage vers le bas */
+  animation: slideInUp 1s forwards;
+  animation-delay: 1s;
 }
 
 .gallery-item:hover {
@@ -62,6 +113,12 @@
   width: 100%;
   height: 250px;
   object-fit: cover;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1); /* Agrandissement de l'image */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Ombre au survol de l'image */
 }
 
 .info {
@@ -95,6 +152,10 @@
   box-shadow: var(--box-shadow);
   max-width: 500px;
   margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideInUp 1s forwards;
+  animation-delay: 1.2s;
 }
 
 .contact-form h2 {
@@ -131,12 +192,22 @@
   border-radius: var(--border-radius);
   border: none;
   cursor: pointer;
-  transition: var(--transition);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
+  opacity: 0;
+  transform: translateY(20px); /* Décalage vers le bas */
+  animation: slideInUp 1s forwards;
+  animation-delay: 1.3s;
 }
 
 .contact-form button:hover {
-  background-color: darken(var(--accent-color), 10%);
+  background-color: #e96d6a; /* Assombrir la couleur d'accent au survol */
+  transform: translateY(-3px); /* Légère élévation au survol */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Ombre plus marquée au survol */
+}
+
+.contact-form button:active {
+  transform: translateY(0px); /* Retour à la position initiale quand le bouton est cliqué */
 }
 
 .contact-form button:disabled {
@@ -150,6 +221,44 @@
   text-align: center;
 }
 
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 @media (max-width: 1024px) {
   .about-page {
