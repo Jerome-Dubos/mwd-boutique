@@ -50,24 +50,38 @@ const ProductPage = () => {
   return (
     <div className="product-page">
       <div className="product-details">
-        <img src={product.image} alt={product.name} className="product-image" />
-        <h1>{product.name}</h1>
-        <p>{product.category}</p>
-        <p>{product.description}</p>
-        <strong>{product.price}€</strong>
-        
-        {/* Affichage du statut de l'œuvre */}
-        <p className={`status ${product.status === 'vendu' ? 'sold' : 'available'}`}>
-          {product.status === 'vendu' ? 'Vendu' : 'Disponible'}
-        </p>
+        {/* Image du produit */}
+        <div className="product-image-container">
+          <img src={product.image} alt={product.name} className="product-image" />
+        </div>
 
-        <button
-          className="btn"
-          onClick={handleAddToCart}
-          disabled={productInCart || product.status === 'vendu'}
-        >
-          {productInCart || product.status === 'vendu' ? "Déjà dans le panier" : "Ajouter au panier"}
-        </button>
+        {/* Informations du produit */}
+        <div className="product-info">
+          <h1>{product.name}</h1>
+          <strong>{product.price}€</strong>
+          <p className="category">{product.category}</p>
+          <p>{product.description}</p>
+
+          {/* Poids et Dimensions */}
+          {product.weight && <p><strong>Poids:</strong> {product.weight} kg</p>}
+          {product.dimensions && (
+            <p><strong>Dimensions:</strong> {product.dimensions} cm</p>
+          )}
+
+          {/* Statut du produit */}
+          <p className={`status ${product.status === 'vendu' ? 'sold' : 'available'}`}>
+            {product.status === 'vendu' ? 'Vendu' : 'Disponible'}
+          </p>
+
+          {/* Bouton Ajouter au panier */}
+          <button
+            className="btn"
+            onClick={handleAddToCart}
+            disabled={productInCart || product.status === 'vendu'}
+          >
+            {productInCart || product.status === 'vendu' ? "Déjà dans le panier" : "Ajouter au panier"}
+          </button>
+        </div>
       </div>
     </div>
   );

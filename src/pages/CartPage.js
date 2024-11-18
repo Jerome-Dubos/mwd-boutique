@@ -49,7 +49,10 @@ const CartPage = () => {
               >
                 <img src={item.image} alt={item.name} />
                 <div className="cart-item-details">
-                  <h2>{item.name}</h2>
+                  <h2>{item.title}</h2>
+                  {item.dimensions && (
+                    <p className="cart-item-dimensions">Dimensions : {item.dimensions}</p>
+                  )}
                   <p>{item.category}</p>
                   <p className="cart-item-price">{item.price}€</p>
                   <p className="cart-item-quantity">Quantité : {item.quantity}</p>

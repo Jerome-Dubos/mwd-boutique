@@ -7,7 +7,9 @@
     "image": "/images/Tableaux/Le Voyage de l'Âme.jpg",
     "description": "Un tableau abstrait qui explore les profondeurs de l'âme humaine et ses émotions.",
     "category": "Abstrait",
-    "status": "disponible"
+    "status": "disponible",
+    "weight": 3.2,
+    "dimensions": "50x70"
   },
   {
     "id": 2,
@@ -17,7 +19,9 @@
     "image": "/images/Tableaux/Horizon Lumineux.jpg",
     "description": "Des couleurs vibrantes qui symbolisent l'espoir et la lumière au bout du tunnel.",
     "category": "Paysage",
-    "status": "disponible"
+    "status": "disponible",
+    "weight": 4.0,
+    "dimensions": "60x80"
   },
   {
     "id": 3,
@@ -27,7 +31,9 @@
     "image": "/images/Tableaux/Rêverie Naturelle.jpg",
     "description": "Une scène paisible inspirée de la nature, capturant la tranquillité et la beauté des paysages.",
     "category": "Nature",
-    "status": "vendu"
+    "status": "vendu",
+    "weight": 2.5,
+    "dimensions": "40x60"
   },
   {
     "id": 4,
@@ -37,7 +43,9 @@
     "image": "/images/Tableaux/Eclat de Vie.jpg",
     "description": "Un portrait vibrant représentant la joie et la vitalité de l'existence.",
     "category": "Portrait",
-    "status": "disponible"
+    "status": "disponible",
+    "weight": 3.8,
+    "dimensions": "70x90"
   },
   {
     "id": 5,
@@ -47,7 +55,9 @@
     "image": "/images/Tableaux/Mélancolie Nocturne.jpg",
     "description": "Une œuvre qui capte la beauté de la nuit, entre ombres et lumières.",
     "category": "Abstrait",
-    "status": "vendu"
+    "status": "vendu",
+    "weight": 2.9,
+    "dimensions": "50x70"
   },
   {
     "id": 6,
@@ -57,7 +67,9 @@
     "image": "/images/Tableaux/Légende Marine.jpg",
     "description": "Un paysage marin inspiré des mystères et des légendes qui entourent la mer.",
     "category": "Paysage",
-    "status": "disponible"
+    "status": "disponible",
+    "weight": 3.3,
+    "dimensions": "60x80"
   },
   {
     "id": 7,
@@ -67,7 +79,9 @@
     "image": "/images/Tableaux/Lueur d'Aube.jpg",
     "description": "Un paysage aux couleurs chaudes représentant la naissance d'une nouvelle journée.",
     "category": "Paysage",
-    "status": "disponible"
+    "status": "disponible",
+    "weight": 2.7,
+    "dimensions": "50x70"
   },
   {
     "id": 8,
@@ -77,7 +91,9 @@
     "image": "/images/Tableaux/Racines Profondes.jpg",
     "description": "Un portrait symbolique des racines et des liens qui nous ancrent à notre héritage.",
     "category": "Portrait",
-    "status": "disponible"
+    "status": "disponible",
+    "weight": 4.2,
+    "dimensions": "80x100"
   },
   {
     "id": 9,
@@ -87,7 +103,9 @@
     "image": "/images/Tableaux/Fusion Céleste.jpg",
     "description": "Une œuvre abstraite qui fusionne les éléments du ciel et de la terre dans une danse harmonieuse.",
     "category": "Abstrait",
-    "status": "disponible"
+    "status": "disponible",
+    "weight": 3.0,
+    "dimensions": "60x80"
   },
   {
     "id": 10,
@@ -97,8 +115,11 @@
     "image": "/images/Tableaux/Sérénité Éphémère.jpg",
     "description": "Une scène paisible de coucher de soleil, où la tranquillité se mêle à l'éphémère.",
     "category": "Nature",
-    "status": "vendu"
-  },{
+    "status": "vendu",
+    "weight": 2.4,
+    "dimensions": "50x70"
+  },
+  {
     "id": 11,
     "title": "Vibration Solaire",
     "artist": "Artiste Indépendant",
@@ -106,7 +127,9 @@
     "image": "/images/Tableaux/Vibration Solaire.jpg",
     "description": "Une peinture vibrante qui capture l'énergie et la chaleur du soleil.",
     "category": "Abstrait",
-    "status": "disponible"
+    "status": "disponible",
+    "weight": 3.5,
+    "dimensions": "60x80"
   },
   {
     "id": 12,
@@ -116,7 +139,9 @@
     "image": "/images/Tableaux/Sous le Ciel d'Or.jpg",
     "description": "Une œuvre qui illustre un ciel orné de nuages dorés, remplis de promesses.",
     "category": "Paysage",
-    "status": "disponible"
+    "status": "disponible",
+    "weight": 3.6,
+    "dimensions": "70x90"
   },
   {
     "id": 13,
@@ -126,7 +151,9 @@
     "image": "/images/Tableaux/Silence des Ombres.jpg",
     "description": "Une composition mystérieuse où les ombres prennent vie dans un monde silencieux.",
     "category": "Abstrait",
-    "status": "disponible"
+    "status": "disponible",
+    "weight": 2.8,
+    "dimensions": "50x70"
   },
   {
     "id": 14,
@@ -136,7 +163,9 @@
     "image": "/images/Tableaux/Éclats d'Or.jpg",
     "description": "Une peinture qui évoque la brillance et la beauté des éclats d'or dans la lumière.",
     "category": "Abstrait",
-    "status": "disponible"
+    "status": "disponible",
+    "weight": 3.7,
+    "dimensions": "70x100"
   },
   {
     "id": 15,
@@ -146,7 +175,9 @@
     "image": "/images/Tableaux/Sous la Lueur de la Lune.jpg",
     "description": "Une scène nocturne mystérieuse éclairée par la lueur douce de la lune.",
     "category": "Nature",
-    "status": "vendu"
+    "status": "vendu",
+    "weight": 2.3,
+    "dimensions": "40x60"
   },
   {
     "id": 16,
@@ -156,7 +187,9 @@
     "image": "/images/Tableaux/Sillage des Vents.jpg",
     "description": "Un tableau dynamique qui illustre le mouvement des vents à travers les champs.",
     "category": "Paysage",
-    "status": "disponible"
+    "status": "disponible",
+    "weight": 3.4,
+    "dimensions": "60x80"
   },
   {
     "id": 17,
@@ -166,7 +199,9 @@
     "image": "/images/Tableaux/Danse des Couleurs.jpg",
     "description": "Une explosion de couleurs qui danse harmonieusement sur la toile.",
     "category": "Abstrait",
-    "status": "disponible"
+    "status": "disponible",
+    "weight": 3.1,
+    "dimensions": "60x90"
   },
   {
     "id": 18,
@@ -176,7 +211,9 @@
     "image": "/images/Tableaux/Tempête Intérieure.jpg",
     "description": "Une représentation poignante d'une tempête émotionnelle, captivée par des couleurs vives.",
     "category": "Abstrait",
-    "status": "disponible"
+    "status": "disponible",
+    "weight": 3.0,
+    "dimensions": "60x80"
   },
   {
     "id": 19,
@@ -186,7 +223,9 @@
     "image": "/images/Tableaux/Flamme d'Esprit.jpg",
     "description": "Une œuvre énergique, pleine de feu et de passion, représentant un esprit enflammé.",
     "category": "Abstrait",
-    "status": "disponible"
+    "status": "disponible",
+    "weight": 3.6,
+    "dimensions": "70x90"
   },
   {
     "id": 20,
@@ -196,6 +235,8 @@
     "image": "/images/Tableaux/Reflet d'Âme.jpg",
     "description": "Un portrait où l'âme de la personne se reflète à travers son regard profond.",
     "category": "Portrait",
-    "status": "disponible"
+    "status": "disponible",
+    "weight": 3.3,
+    "dimensions": "60x80"
   }
 ]

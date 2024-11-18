@@ -1,3 +1,4 @@
+/* Shop Section */
 .shop {
     display: flex;
     flex-direction: column;
@@ -68,7 +69,6 @@
     transition: transform 0.2s ease, background-color 0.3s ease;
     border: 2px solid var(--primary-color);
 }
-
 
 /* Effet de survol des filtres */
 .filter-btn:hover {
@@ -242,5 +242,34 @@
 
     .pagination-btn {
         padding: 6px 12px;
+    }
+}
+
+/* Dimensions des produits - Version discrète */
+.product-card .product-dimensions {
+    margin-top: 8px;
+    font-size: 0.9rem; /* Taille de police réduite */
+    color: #777; /* Couleur plus douce */
+    font-weight: 400; /* Poids de police normal */
+    background-color: transparent; /* Pas de fond pour garder la discrétion */
+    padding: 4px 8px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    display: inline-block;
+    width: auto;
+    transition: color 0.3s ease, transform 0.2s ease; /* Transition subtile */
+}
+
+/* Effet de survol des dimensions - légèrement plus visible */
+.product-card .product-dimensions:hover {
+    color: var(--primary-color); /* Couleur primaire au survol */
+    transform: translateY(-2px); /* Légère élévation */
+}
+
+/* Si vous souhaitez également masquer les dimensions dans certaines situations (par exemple, sur mobile), vous pouvez ajouter une règle media */
+@media (max-width: 768px) {
+    .product-card .product-dimensions {
+        font-size: 0.85rem; /* Taille encore plus petite sur mobile */
+        color: #999; /* Couleur encore plus discrète */
     }
 }

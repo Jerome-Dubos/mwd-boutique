@@ -129,6 +129,7 @@ const Shop = () => {
               <h3>{product.name}</h3>
               <p>{product.category}</p>
               <p><strong>{product.price}€</strong></p>
+              <p><strong className='product-dimensions'>Dimensions :</strong> {product.dimensions}</p> {/* Affichage des dimensions */}
               <button
                 className={`btn ${isInCart ? 'disabled' : ''}`}
                 onClick={(e) => {

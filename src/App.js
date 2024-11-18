@@ -12,6 +12,7 @@ import About from './pages/About';
 import Error from './pages/Error';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/Terms';
+import Checkout from './pages/Checkout';
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsAndConditions />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="*" element={<Error />} />
           </Routes>
         </main>

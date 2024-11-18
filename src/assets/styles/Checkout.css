@@ -1,0 +1,143 @@
+/* Conteneur principal du checkout */
+.checkout {
+    width: 70%;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+  }
+  
+  /* Titre principal */
+  .checkout h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 20px;
+  }
+  
+  /* Formulaire de checkout */
+  .checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Label des champs du formulaire */
+  .checkout-form label {
+    font-weight: 500;
+    color: var(--primary-color);
+  }
+  
+  /* Champs de saisie */
+  .checkout-form input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .checkout-form input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 132, 116, 0.6);
+  }
+  
+  /* Résumé du panier */
+  .cart-summary {
+    margin-top: 30px;
+  }
+  
+  /* Item du panier */
+  .cart-item {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    transition: transform 0.3s ease;
+    width: 100%; /* S'assurer que l'élément prend toute la largeur */
+  }
+  
+  .cart-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Image du produit dans le panier */
+  .cart-item-image {
+    width: 150px; /* Augmenter la taille pour occuper plus d'espace */
+    height: 150px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-right: 20px;
+    flex-shrink: 0; /* Pour éviter que l'image ne soit réduite */
+  }
+  
+  /* Détails du produit dans le panier */
+  .cart-item-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  /* Style pour le texte dans les items du panier */
+  .cart-item-details p {
+    font-size: 1rem;
+    color: var(--dark-text);
+    margin: 0;
+  }
+  
+  /* Total du panier */
+  .cart-summary .total {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--dark-text);
+    margin-top: 20px;
+  }
+  
+  /* Bouton de soumission */
+  .submit-btn {
+    margin-top: 30px;
+    padding: 14px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+  }
+  
+  /* Statut de paiement */
+  .payment-status {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: green;
+    font-weight: 600;
+  }
+  
+  /* Message si le panier est vide */
+  .checkout-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: red;
+    font-weight: 500;
+  }
+  
+  /* Effet de focus sur les champs du formulaire */
+  .checkout-form input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(255, 132, 116, 0.6);
+  }
+  
