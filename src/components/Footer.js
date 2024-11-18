@@ -12,13 +12,6 @@ const Footer = () => {
         </Link>
       </div>
       
-      <nav className="footer-nav">
-        <ul>
-          <li><Link to="/about">À propos</Link></li>
-          <li><Link to="/privacy">Politique de confidentialité</Link></li>
-          <li><Link to="/terms">Conditions d'utilisation</Link></li>
-        </ul>
-      </nav>
 
       <div className="footer-social-links">
         <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
@@ -31,6 +24,13 @@ const Footer = () => {
           <i className="fab fa-pinterest"></i>
         </a>
       </div>
+
+      <nav className="footer-nav">
+        <ul>
+          <li><Link to="/privacy">Politique de confidentialité</Link></li>
+          <li><Link to="/terms">Conditions d'utilisation</Link></li>
+        </ul>
+      </nav>
 
       <div className="footer-contact-info">
         <p>Contactez-nous : <a href="mailto:contact@mwd-boutique.com">contact@mwd-boutique.com</a></p>

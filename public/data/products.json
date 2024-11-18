@@ -98,5 +98,104 @@
     "description": "Une scène paisible de coucher de soleil, où la tranquillité se mêle à l'éphémère.",
     "category": "Nature",
     "status": "vendu"
+  },{
+    "id": 11,
+    "title": "Vibration Solaire",
+    "artist": "Artiste Indépendant",
+    "price": 280,
+    "image": "/images/Tableaux/Vibration Solaire.jpg",
+    "description": "Une peinture vibrante qui capture l'énergie et la chaleur du soleil.",
+    "category": "Abstrait",
+    "status": "disponible"
+  },
+  {
+    "id": 12,
+    "title": "Sous le Ciel d'Or",
+    "artist": "Artiste Indépendant",
+    "price": 340,
+    "image": "/images/Tableaux/Sous le Ciel d'Or.jpg",
+    "description": "Une œuvre qui illustre un ciel orné de nuages dorés, remplis de promesses.",
+    "category": "Paysage",
+    "status": "disponible"
+  },
+  {
+    "id": 13,
+    "title": "Silence des Ombres",
+    "artist": "Artiste Indépendant",
+    "price": 250,
+    "image": "/images/Tableaux/Silence des Ombres.jpg",
+    "description": "Une composition mystérieuse où les ombres prennent vie dans un monde silencieux.",
+    "category": "Abstrait",
+    "status": "disponible"
+  },
+  {
+    "id": 14,
+    "title": "Éclats d'Or",
+    "artist": "Artiste Indépendant",
+    "price": 360,
+    "image": "/images/Tableaux/Éclats d'Or.jpg",
+    "description": "Une peinture qui évoque la brillance et la beauté des éclats d'or dans la lumière.",
+    "category": "Abstrait",
+    "status": "disponible"
+  },
+  {
+    "id": 15,
+    "title": "Sous la Lueur de la Lune",
+    "artist": "Artiste Indépendant",
+    "price": 200,
+    "image": "/images/Tableaux/Sous la Lueur de la Lune.jpg",
+    "description": "Une scène nocturne mystérieuse éclairée par la lueur douce de la lune.",
+    "category": "Nature",
+    "status": "vendu"
+  },
+  {
+    "id": 16,
+    "title": "Sillage des Vents",
+    "artist": "Artiste Indépendant",
+    "price": 290,
+    "image": "/images/Tableaux/Sillage des Vents.jpg",
+    "description": "Un tableau dynamique qui illustre le mouvement des vents à travers les champs.",
+    "category": "Paysage",
+    "status": "disponible"
+  },
+  {
+    "id": 17,
+    "title": "Danse des Couleurs",
+    "artist": "Artiste Indépendant",
+    "price": 310,
+    "image": "/images/Tableaux/Danse des Couleurs.jpg",
+    "description": "Une explosion de couleurs qui danse harmonieusement sur la toile.",
+    "category": "Abstrait",
+    "status": "disponible"
+  },
+  {
+    "id": 18,
+    "title": "Tempête Intérieure",
+    "artist": "Artiste Indépendant",
+    "price": 320,
+    "image": "/images/Tableaux/Tempête Intérieure.jpg",
+    "description": "Une représentation poignante d'une tempête émotionnelle, captivée par des couleurs vives.",
+    "category": "Abstrait",
+    "status": "disponible"
+  },
+  {
+    "id": 19,
+    "title": "Flamme d'Esprit",
+    "artist": "Artiste Indépendant",
+    "price": 330,
+    "image": "/images/Tableaux/Flamme d'Esprit.jpg",
+    "description": "Une œuvre énergique, pleine de feu et de passion, représentant un esprit enflammé.",
+    "category": "Abstrait",
+    "status": "disponible"
+  },
+  {
+    "id": 20,
+    "title": "Reflet d'Âme",
+    "artist": "Artiste Indépendant",
+    "price": 270,
+    "image": "/images/Tableaux/Reflet d'Âme.jpg",
+    "description": "Un portrait où l'âme de la personne se reflète à travers son regard profond.",
+    "category": "Portrait",
+    "status": "disponible"
   }
 ]

@@ -9,7 +9,7 @@ const Shop = () => {
   const { addToCart, cartItems } = useCart();
   const [filters, setFilters] = useState({ category: '', price: [0, 2500] });
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 6;
+  const productsPerPage = 8; // Updated to 8 products per page
   const [productsData, setProductsData] = useState([]);
   const [loading, setLoading] = useState(true); // State to manage loading
 
