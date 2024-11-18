@@ -5,8 +5,7 @@ const Cart = () => {
   const { cart } = useCart();
 
   const getTotal = () => {
-    // Ici, tu pourrais ajouter la logique pour calculer le total du panier
-    return cart.length * 100; // Par exemple, 100 pour chaque tableau
+    return cart.length * 100;
   };
 
   return (

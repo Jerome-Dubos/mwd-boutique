@@ -1,24 +1,23 @@
-/* Styles du Footer */
 .footer-main {
   background-color: var(--primary-color);
   color: var(--light-color);
   box-shadow: var(--box-shadow);
   padding: 40px 0;
-  margin-top: 40px; /* Espacement ajouté au-dessus du footer */
+  margin-top: 40px; 
 }
 
 /* Logo du Footer */
 .footer-logo {
-  text-align: center; /* Centre le logo horizontalement */
-  margin-bottom: 20px; /* Espacement sous le logo */
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .footer-logo img {
   width: 180px;
   height: auto;
   transition: transform 0.3s ease;
-  display: block; /* S'assure que l'image est traitée comme un bloc pour pouvoir la centrer */
-  margin: 0 auto; /* Centrage de l'image */
+  display: block;
+  margin: 0 auto; 
 }
 
 .footer-logo img:hover {
@@ -59,18 +58,18 @@
   width: 0%;
   height: 2px;
   background-color: var(--accent-color);
-  transition: width 0.3s ease; /* Effet de glissement */
+  transition: width 0.3s ease; 
 }
 
 /* L'animation de soulignage lors du survol */
 .footer-nav a:hover {
   color: var(--accent-color);
-  transform: translateY(-4px); /* Déplacement vers le haut */
+  transform: translateY(-4px);
 }
 
 /* L'animation du soulignage */
 .footer-nav a:hover::before {
-  width: 100%; /* Le soulignage glisse sur toute la largeur */
+  width: 100%; 
 }
 
 /* Liens sociaux */
@@ -89,7 +88,7 @@
 
 .footer-social-links a:hover {
   color: var(--accent-color);
-  transform: translateY(-4px) scale(1.1); /* Effet de zoom en plus du déplacement */
+  transform: translateY(-4px) scale(1.1); 
 }
 
 /* Informations de contact */
@@ -132,11 +131,11 @@
 
   .footer-nav ul {
     flex-direction: column;
-    gap: 20px; /* Espacement entre les éléments */
+    gap: 20px; 
   }
 
   .footer-nav a {
-    font-size: 16px; /* Taille de police réduite pour les petits écrans */
+    font-size: 16px; 
     text-transform: none;
   }
 
@@ -146,7 +145,7 @@
   }
 
   .footer-social-links a {
-    font-size: 28px; /* Légèrement plus grand pour les icônes sociales */
+    font-size: 28px; 
   }
 
   .footer-contact-info {
@@ -166,7 +165,7 @@
   }
 
   .footer-nav ul {
-    gap: 15px; /* Moins d'espacement */
+    gap: 15px;
   }
 
   .footer-social-links {

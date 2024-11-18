@@ -1,39 +1,34 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { CartContext } from '../context/CartContext'; // Assurez-vous d'importer le contexte
+import { CartContext } from '../context/CartContext';
 import productsData from '../data/products.json';
 import '../assets/styles/ProductPage.css';
 
 const ProductPage = () => {
-  const { productId } = useParams(); // Récupère l'ID du produit depuis l'URL
-  const [product, setProduct] = useState(null); // État pour stocker les informations du produit
-  const { addToCart, cartItems } = useContext(CartContext); // Accède au contexte pour ajouter au panier et récupérer les articles du panier
-  const [productInCart, setProductInCart] = useState(false); // État local pour savoir si le produit est dans le panier
+  const { productId } = useParams();
+  const [product, setProduct] = useState(null);
+  const { addToCart, cartItems } = useContext(CartContext);
+  const [productInCart, setProductInCart] = useState(false);
 
   useEffect(() => {
-    console.log("ID du produit dans l'URL :", productId); // Vérification de l'ID
-    // Trouve le produit avec l'ID dans le fichier JSON
+    console.log("ID du produit dans l'URL :", productId);
     const foundProduct = productsData.find((prod) => String(prod.id) === productId);
-    console.log("Produit trouvé :", foundProduct); // Affiche le produit trouvé dans les logs
-    setProduct(foundProduct); // Met à jour l'état avec le produit trouvé
-  }, [productId]); // Le useEffect est déclenché à chaque fois que productId change
+    setProduct(foundProduct);
+  }, [productId]);
 
   useEffect(() => {
     if (product) {
-      // Vérifie si le produit est déjà dans le panier
       const isInCart = cartItems.some(item => item.id === product.id);
-      setProductInCart(isInCart); // Met à jour l'état productInCart en fonction du panier
+      setProductInCart(isInCart);
     }
-  }, [cartItems, product]); // Ce useEffect est exécuté à chaque fois que cartItems change ou que product change
+  }, [cartItems, product]);
 
-  // Si le produit n'est pas trouvé, afficher un message d'erreur
   if (!product) {
     return <div>Produit non trouvé</div>;
   }
 
-  // Fonction pour ajouter le produit au panier
   const handleAddToCart = () => {
-    addToCart(product); // Ajoute le produit au panier via le CartContext
+    addToCart(product); 
   };
 
   return (
@@ -48,7 +43,7 @@ const ProductPage = () => {
         <button
           className="btn"
           onClick={handleAddToCart}
-          disabled={productInCart} // Désactive le bouton si le produit est déjà dans le panier
+          disabled={productInCart}
         >
           {productInCart ? "Déjà dans le panier" : "Ajouter au panier"}
         </button>

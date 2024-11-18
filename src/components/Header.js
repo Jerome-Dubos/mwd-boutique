@@ -7,17 +7,12 @@ import '../assets/styles/Header.css';
 const Header = () => {
   const { cartItems } = useContext(CartContext);
   const totalItemsInCart = cartItems.reduce((total, item) => total + item.quantity, 0);
-
-  // Référence pour la croix (bouton de fermeture du menu)
   const closeButtonRef = useRef(null);
-
-  // État pour le menu hamburger
   const [menuOpen, setMenuOpen] = useState(false);
 
   // Gestion du clic en dehors du menu pour fermer le menu
   useEffect(() => {
     const handleClickOutside = (event) => {
-      // Ne fermer le menu que si l'utilisateur clique sur la croix
       if (closeButtonRef.current && event.target === closeButtonRef.current) {
         setMenuOpen(false);
       }

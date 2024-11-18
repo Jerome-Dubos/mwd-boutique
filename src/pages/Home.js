@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import ProductCard from '../components/ProductCard'; // Assurez-vous de créer un composant ProductCard
+import ProductCard from '../components/ProductCard';
 import products from '../data/products.json'
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // Importation des styles de AOS
+import 'aos/dist/aos.css';
 import '../assets/styles/Home.css';
 
 const Home = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000 }); // Initialisation d'AOS avec une durée d'animation de 1 seconde
+    AOS.init({ duration: 1000 });
   }, []);
   const latestProducts = products.slice(-4);
 

@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { useCart } from '../context/CartContext'; // Importation du hook
+import { useNavigate } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 import productsData from '../data/products.json';
-import '../assets/styles/Shop.css'; // Importation du CSS
+import '../assets/styles/Shop.css';
 
 const Shop = () => {
-  const { addToCart, cartItems } = useCart(); // Accès à addToCart et cartItems
+  const navigate = useNavigate();
+  const { addToCart, cartItems } = useCart();
   const [filters, setFilters] = useState({ category: '', price: [0, 2500] });
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 6;
@@ -27,6 +29,11 @@ const Shop = () => {
     setFilters({ category: '', price: [0, 2500] });
   };
 
+  // Fonction pour rediriger vers la page produit
+  const handleProductClick = (productId) => {
+    navigate(`/product/${productId}`);
+  };
+
   // Filtrage des produits
   const filteredProducts = productsData.filter((product) => {
     const [minPrice, maxPrice] = filters.price;
@@ -39,17 +46,13 @@ const Shop = () => {
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
-
-  // Calculer le nombre de pages
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 
-  // Fonction pour changer de page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div className="shop">
       <div className="filters">
-        {/* Filtres par catégorie et prix */}
         <div className="category-filters">
           <button
             className={`filter-btn ${filters.category === 'Abstrait' ? 'active' : ''}`}
@@ -95,15 +98,22 @@ const Shop = () => {
         {currentProducts.map(product => {
           const isInCart = cartItems.some(item => item.id === product.id);
           return (
-            <div className="product-card" key={product.id}>
+            <div
+              className="product-card"
+              key={product.id}
+              onClick={() => handleProductClick(product.id)}
+            >
               <img src={product.image} alt={product.name} />
               <h3>{product.name}</h3>
               <p>{product.category}</p>
               <p><strong>{product.price}€</strong></p>
               <button
-                className={`btn ${isInCart ? 'disabled' : ''}`} // Ajout de la classe disabled
-                onClick={() => !isInCart && addToCart(product)} // Ajouter au panier si non présent
-                disabled={isInCart} // Désactiver le bouton si déjà dans le panier
+                className={`btn ${isInCart ? 'disabled' : ''}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  !isInCart && addToCart(product);
+                }}
+                disabled={isInCart}
               >
                 {isInCart ? 'Dans le panier' : 'Ajouter au panier'}
               </button>
@@ -112,7 +122,6 @@ const Shop = () => {
         })}
       </div>
 
-      {/* Pagination */}
       {totalPages > 1 && (
         <div className="pagination">
           <button

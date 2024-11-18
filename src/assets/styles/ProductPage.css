@@ -107,16 +107,16 @@
 
 /* Bouton désactivé (si le produit est déjà dans le panier) */
 .product-details .btn:disabled {
-  background-color: #ccc; /* Couleur de fond grise lorsque le bouton est désactivé */
-  cursor: not-allowed; /* Curseur pour indiquer que le bouton est désactivé */
-  transform: none; /* Pas de changement de taille sur hover */
-  box-shadow: none; /* Pas d'ombre portée */
+  background-color: #ccc; 
+  cursor: not-allowed; 
+  transform: none; 
+  box-shadow: none; 
 }
 
 /* Désactivation de l'effet hover sur un bouton désactivé */
 .product-details .btn:disabled:hover {
-  background-color: #ccc; /* Maintien la couleur grise pour le hover */
-  transform: none; /* Pas d'effet d'agrandissement */
+  background-color: #ccc; 
+  transform: none; 
 }
 
 /* Media queries pour rendre la page responsive */
